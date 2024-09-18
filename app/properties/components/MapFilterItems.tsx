@@ -2,7 +2,9 @@ import React from 'react'
 
 function MapFilterItems() {
   return (
-    <div>MapFilterItems</div>
+    <div>
+      <h1>Maping file</h1>
+    </div>
   )
 }
 
