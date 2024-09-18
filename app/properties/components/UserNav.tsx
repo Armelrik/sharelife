@@ -34,7 +34,7 @@ export async function UserNav() {
             ) : (
               <>
                 <DropdownMenuItem>
-                  <RegisterLink className='w-full'>S'enregistrer</RegisterLink>
+                  <RegisterLink className='w-full'>Creer un Compte</RegisterLink>
                 </DropdownMenuItem>
                 <DropdownMenuItem>
                   <LoginLink className='w-full'>Se connecter</LoginLink>

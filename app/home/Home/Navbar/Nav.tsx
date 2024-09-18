@@ -84,7 +84,7 @@ export async function Nav({openNav}: Props) {
                     ) : (
                     <>
                         <DropdownMenuItem>
-                        <RegisterLink className='w-full'>S'enregistrer</RegisterLink>
+                        <RegisterLink className='w-full'>Senregistrer</RegisterLink>
                         </DropdownMenuItem>
                         <DropdownMenuItem>
                         <LoginLink className='w-full'>Se connecter</LoginLink>
