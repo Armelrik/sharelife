@@ -28,6 +28,7 @@ const Footer = () => {
 
             {/* Social links */}
             <div className="flex items-center space-x-4 mt-4">
+              
               <FacebookIcon className='w-6 h-6 text-blue-600'/>
               <Twitter className='w-6 h-6 text-sky-500'/>
               <Youtube className='w-6 h-6 text-red-700'/>

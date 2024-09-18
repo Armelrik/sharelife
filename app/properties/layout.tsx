@@ -7,7 +7,6 @@ function PropertiesLayout({children}: {children: ReactNode}) {
     <div>
       <Navbar />
       {children}
-      
     </div>
   )
 }
