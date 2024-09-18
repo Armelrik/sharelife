@@ -16,7 +16,6 @@ type Props = {
 const ReviewCard = ({review}: Props) => {
   return (
     <div className='rounded-lg bg-white m-3 p-6 relative'>
-        {/* <Image src="/assets/icons/arrow.svg" alt="question" width={28} height={28} /> */}
         <Quote className='text-yellow-400'/>
         <div className="mt-6 flex items-center">
             <StarIcon className='w-4 h-4 text-yellow-600' />

@@ -1,4 +1,4 @@
-import { EnvelopeIcon } from '@heroicons/react/16/solid';
+
 import { CalendarIcon } from '@heroicons/react/20/solid';
 import { MessageSquare } from 'lucide-react';
 import Image from 'next/image';

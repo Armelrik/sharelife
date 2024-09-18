@@ -36,17 +36,14 @@ const PropertyCard = ({property}: Props) => {
             <p className="text-sm">{property.location}</p>
             <div className="flex items-center mt-6 justify-between w-full lg:w-[80%]">
                 <div className="flex items-center space-x-2">
-                    {/* <Image src='/assets/icons/loader.svg' alt='bed' width={18} height={18} /> */}
                     <Bed className='text-yellow-400' />
                     <p className="text-xs text-gray-600">{property.bedrooms} Chambres</p> 
                 </div>
                 <div className="flex items-center space-x-2">
-                    {/* <Image src='/assets/icons/clock.svg' alt='bath' width={18} height={18} /> */}
                     <Bath className='text-yellow-400' />
                     <p className="text-xs text-gray-600">{property.bathrooms} Douches</p> 
                 </div>
                 <div className="flex items-center space-x-2">
-                    {/* <Image src='/assets/icons/clock.svg' alt='square' width={18} height={18} /> */}
                     <Square className='text-yellow-400'/>
                     <p className="text-xs text-gray-600">{property.size} m2</p>
                 </div>
@@ -55,13 +52,9 @@ const PropertyCard = ({property}: Props) => {
             <div className="flex items-center justify-between">
                 <h1 className="text-xs text-gray-600">A louer</h1>
                 <div className="flex items-center space-x-4 text-gray-500">
-                    
-                    {/* <Image src='/assets/icons/arrow.svg' alt='link' width={18} height={18} /> */}
-                    {/* <Image src='/assets/icons/clock.svg' alt='square' width={18} height={18} /> */}
                     <ArrowUpRight className='text-yellow-400' />
                     <Square className='text-yellow-400' />
                     <HeartIcon className='text-yellow-400'/>
-                    {/* <Image src='/assets/icons/loader.svg' alt='heart' width={18} height={18} /> */}
                 </div>
             </div>
         </div>

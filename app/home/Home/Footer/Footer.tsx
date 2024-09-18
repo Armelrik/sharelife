@@ -1,6 +1,4 @@
 
-import { GifIcon } from '@heroicons/react/16/solid'
-import { FaceSmileIcon, StopCircleIcon } from '@heroicons/react/16/solid'
 import { FacebookIcon, Instagram, Twitter, Youtube } from 'lucide-react'
 import Link from 'next/link'
 import React from 'react'

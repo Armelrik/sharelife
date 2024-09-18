@@ -1,9 +1,6 @@
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import "./globals.css";
-import ResponsiveNavbar from "@/app/home/Home/Navbar/ResponsiveNavbar";
-import Footer from "@/app/home/Home/Footer/Footer";
-import ScrollToTop from "@/app/home/Helper/ScrollToTop";
 
 const font = Roboto({
   weight: ["100","300","400","500","700", "900"],
