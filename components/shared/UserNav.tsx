@@ -1,6 +1,8 @@
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu'
+import { createMyHome } from '@/app/actions';
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger } from '@/components/ui/dropdown-menu'
 import { getKindeServerSession, LoginLink, LogoutLink, RegisterLink } from '@kinde-oss/kinde-auth-nextjs/server'
 import { MenuIcon } from 'lucide-react'
+import Link from 'next/link';
 import React from 'react'
 
 export async function UserNav() {
@@ -8,6 +10,9 @@ export async function UserNav() {
   const {getUser} = getKindeServerSession ();
   const user = await getUser()
 
+  const createHomeWithId = createMyHome.bind(null, {
+    userId: user?.id as string
+  })
 
   return (
     <DropdownMenu>
@@ -22,19 +27,33 @@ export async function UserNav() {
               <>
                 <DropdownMenuItem>
                   <div className="w-full">
-                    <p className="font-bold">{user.given_name}</p>
-                    <p className="text-sm">{user.email}</p>
+                    <p className="font-bold line-clamp-1">{user.given_name}</p>
+                    <p className="text-sm line-clamp-1">{user.email}</p>
                   </div>
                 </DropdownMenuItem>
-                <DropdownMenuItem>Mes Favoris</DropdownMenuItem>
+                <DropdownMenuSeparator />
                 <DropdownMenuItem>
-                  <LogoutLink className='w-full'>Se deconnecter</LogoutLink>
+                  <form className='w-full' action={createHomeWithId}>
+                    <button type='submit' className='w-full text-start'>
+                      Ajouter votre maison
+                    </button>
+                  </form>
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  <Link href='/my-homes' className='w-full'>Mes Propriétés</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  <Link href='/favorites' className='w-full'>Mes Favoris</Link>
+                </DropdownMenuItem>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem>
+                  <LogoutLink className='w-full font-semibold'>Se déconnecter</LogoutLink>
                 </DropdownMenuItem>
               </>
             ) : (
               <>
                 <DropdownMenuItem>
-                  <RegisterLink className='w-full'>Creer Compte</RegisterLink>
+                  <RegisterLink className='w-full'>Créer un compte</RegisterLink>
                 </DropdownMenuItem>
                 <DropdownMenuItem>
                   <LoginLink className='w-full'>Se connecter</LoginLink>

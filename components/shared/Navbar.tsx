@@ -4,7 +4,6 @@ import React from 'react'
 import { UserNav } from './UserNav'
 
 
-
 export default function Navbar() {
   return (
     <nav className='w-full border-b'>

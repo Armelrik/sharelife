@@ -1,8 +1,8 @@
 "use client"
 
 import React, { useState } from 'react'
-import Navbar from './Navbar'
 import MobileNavbar from './MobileNavbar'
+import Navbar from '@/components/shared/Navbar'
 
 const ResponsiveNavbar = () => {
 
@@ -12,7 +12,8 @@ const ResponsiveNavbar = () => {
 
   return (
     <div>
-        <Navbar openNav = {openNavHandler} />
+        {/* <Navbar openNav = {openNavHandler} /> */}
+        {/* <Navbar /> */}
         <MobileNavbar showNav = {showNavbar} closeNav = {closeNavHandler} />
     </div>
   )
