@@ -8,7 +8,12 @@ const nextConfig = {
         port: "",
       },
       {
-        hostname: "glvmmupiqwlmhicmggqp.supabase.co",
+        hostname: "gjeaabemtldcnkmomcbw.supabase.co",
+        protocol: "https",
+        port: "",
+      },
+      {
+        hostname: "static.vecteezy.com",
         protocol: "https",
         port: "",
       },

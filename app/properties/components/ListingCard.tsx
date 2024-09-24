@@ -9,6 +9,8 @@ interface iAppProps {
   description: string;
   location: string;
   price: number;
+  town: string;
+  ward: string;
   userId: string | undefined;
   isInFavoriteList: boolean;
   favoriteId: string;
@@ -20,6 +22,8 @@ export function ListingCard({
   description,
   imagePath,
   location,
+  town,
+  ward,
   price,
   userId,
   favoriteId,
@@ -34,7 +38,7 @@ export function ListingCard({
     <div className="flex flex-col">
       <div className="relative h-72">
         <Image
-          src={`https://glvmmupiqwlmhicmggqp.supabase.co/storage/v1/object/public/images/${imagePath}`}
+          src={`https://gjeaabemtldcnkmomcbw.supabase.co/storage/v1/object/public/images/${imagePath}`}
           alt="Image of House"
           fill
           className="rounded-lg h-full object-cover"
@@ -63,7 +67,7 @@ export function ListingCard({
 
       <Link href={`/home/${homeId}`} className="mt-2">
         <h3 className="font-medium text-base">
-          {country?.flag} {country?.label} / {country?.region}
+          {country?.flag} {country?.label} / {town} / {ward}
         </h3>
         <p className="text-muted-foreground text-sm line-clamp-2">
           {description}

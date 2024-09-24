@@ -2,6 +2,7 @@
 import Link from 'next/link'
 import React from 'react'
 import { UserNav } from './UserNav'
+import { SearchModalCompnent } from '@/app/properties/components/SearchComponent'
 
 
 export default function Navbar() {
@@ -21,9 +22,9 @@ export default function Navbar() {
         </Link>
 
         {/* SEARCH */}
-        <div className="rounded-full shadow-lg border px-5 py-2">
-          <h1>Hello from search</h1>
-        </div>
+        {/* <div className="rounded-full shadow-lg border px-5 py-2"> */}
+          <SearchModalCompnent />
+        {/* </div> */}
 
         <UserNav />
 

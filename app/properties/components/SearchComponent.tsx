@@ -1,32 +1,15 @@
 "use client";
 
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectLabel,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
-
+import {Dialog,DialogContent,DialogDescription,DialogFooter,DialogHeader,DialogTitle,DialogTrigger,} from "@/components/ui/dialog";
+import {Select,SelectContent,SelectGroup,SelectItem,SelectLabel,SelectTrigger,SelectValue,} from "@/components/ui/select";
 import { Search } from "lucide-react";
 import { useState } from "react";
-import { useCountries } from "../lib/getCountries";
 import { HomeMap } from "./HomeMap";
 import { Button } from "@/components/ui/button";
 import { CreationSubmit } from "./SubmitButtons";
 import { Card, CardHeader } from "@/components/ui/card";
 import { Counter } from "./Counter";
+import { useCountries } from "@/lib/getCountries";
 
 export function SearchModalCompnent() {
   const [step, setStep] = useState(1);
@@ -37,7 +20,7 @@ export function SearchModalCompnent() {
     if (step === 1) {
       return (
         <Button onClick={() => setStep(step + 1)} type="button">
-          Next
+          Suivant
         </Button>
       );
     } else if (step === 2) {
@@ -49,9 +32,9 @@ export function SearchModalCompnent() {
       <DialogTrigger asChild>
         <div className="rounded-full py-2 px-5 border flex items-center cursor-pointer">
           <div className="flex h-full divide-x font-medium">
-            <p className="px-4">Anywhere</p>
-            <p className="px-4">Any Week</p>
-            <p className="px-4">Add Guests</p>
+            <p className="px-4">Lieu</p>
+            <p className="px-4">Duree</p>
+            <p className="px-4">Personnes</p>
           </div>
 
           <Search className="bg-primary text-white p-1 h-8 w-8 rounded-full" />
@@ -63,9 +46,9 @@ export function SearchModalCompnent() {
           {step === 1 ? (
             <>
               <DialogHeader>
-                <DialogTitle>Select a Country</DialogTitle>
+                <DialogTitle>Choisir le pays</DialogTitle>
                 <DialogDescription>
-                  Pleae Choose a Country, so that what you want
+                  Dans quel pays?
                 </DialogDescription>
               </DialogHeader>
 
@@ -75,11 +58,11 @@ export function SearchModalCompnent() {
                 value={locationValue}
               >
                 <SelectTrigger className="w-full">
-                  <SelectValue placeholder="Select a Country" />
+                  <SelectValue placeholder="Pays" />
                 </SelectTrigger>
                 <SelectContent>
                   <SelectGroup>
-                    <SelectLabel>Countries</SelectLabel>
+                    <SelectLabel>Pays</SelectLabel>
                     {getAllCountries().map((item) => (
                       <SelectItem key={item.value} value={item.value}>
                         {item.flag} {item.label} / {item.region}

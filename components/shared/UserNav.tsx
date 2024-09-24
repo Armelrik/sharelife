@@ -40,10 +40,16 @@ export async function UserNav() {
                   </form>
                 </DropdownMenuItem>
                 <DropdownMenuItem>
+                  <Link href='/properties' className='w-full'>Propriétés</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem>
                   <Link href='/my-homes' className='w-full'>Mes Propriétés</Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem>
                   <Link href='/favorites' className='w-full'>Mes Favoris</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  <Link href='/reservations' className='w-full'>Mes réservations</Link>
                 </DropdownMenuItem>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem>

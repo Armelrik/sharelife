@@ -40,6 +40,8 @@ async function getData({
       price: true,
       description: true,
       country: true,
+      town: true,
+      ward: true,
       Favorite: {
         where: {
           userId: userId ?? undefined,
@@ -104,6 +106,8 @@ async function ShowItems({
               imagePath={item.photo as string}
               location={item.country as string}
               price={item.price as number}
+              town={item.town as string}
+              ward={item.ward as string}
               userId={user?.id}
               favoriteId={item.Favorite[0]?.id}
               isInFavoriteList={item.Favorite.length > 0 ? true : false}
