@@ -14,6 +14,8 @@ import { CaegoryShowcase } from "@/app/properties/components/CategoryShowcase";
 import { HomeMap } from "@/app/properties/components/HomeMap";
 import { SelectCalender } from "@/app/properties/components/SelectCalender";
 import { ReservationSubmitButton } from "@/app/properties/components/SubmitButtons";
+import Footer from "../Home/Footer/Footer";
+import Navbar from "@/components/shared/Navbar";
 
 async function getData(homeid: string) {
   noStore();
@@ -60,6 +62,8 @@ export default async function HomeRoute({
   const { getUser } = getKindeServerSession();
   const user = await getUser();
   return (
+    <>
+    <Navbar />
     <div className="w-[75%] mx-auto mt-10 mb-12">
       <h1 className="font-medium text-2xl mb-5">{data?.title}</h1>
       <div className="relative h-[550px]">
@@ -119,11 +123,13 @@ export default async function HomeRoute({
             <ReservationSubmitButton />
           ) : (
             <Button className="w-full" asChild>
-              <Link href="/api/auth/login">Faire une Reservation</Link>
+              <Link href="/api/auth/login">Faire une Reservation avec Stripe</Link>
             </Button>
           )}
         </form>
       </div>
     </div>
+    <Footer />
+    </>
   );
 }

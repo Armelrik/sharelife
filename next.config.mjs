@@ -17,6 +17,11 @@ const nextConfig = {
         protocol: "https",
         port: "",
       },
+      {
+        hostname: "aws-0-eu-west-3.pooler.supabase.com",
+        protocol: "https",
+        port: "6543",
+      },
     ],
   },
 };
