@@ -11,8 +11,6 @@ import Blog from './Blog/Blog'
 import AOS from 'aos'
 import 'aos/dist/aos.css';
 import Hero from '../Hero/Hero'
-import Hero2 from '../Hero/Hero2'
-// import Hero2 from '../Hero/Hero2';
 
 const Home = () => {
 
@@ -34,7 +32,6 @@ const Home = () => {
   return (
     <div className='overflow-hidden'>
       <Hero />
-      {/* <Hero2 /> */}
       <CategoryBanner />
       <CategoryPage />
       <Property />

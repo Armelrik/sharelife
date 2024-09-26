@@ -1,4 +1,4 @@
-import { Suspense, use } from "react";
+import { Suspense } from "react";
 
 import { SkeltonCard } from "./components/SkeletonCard";
 import { NoItems } from "./components/NoItem";

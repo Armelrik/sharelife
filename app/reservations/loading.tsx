@@ -1,4 +1,3 @@
-// import { SkeltonCard } from "../components/SkeletonCard";
 
 import { SkeltonCard } from "../properties/components/SkeletonCard";
 
