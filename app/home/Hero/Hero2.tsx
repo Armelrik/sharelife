@@ -1,7 +1,7 @@
 import React from 'react'
 import SearchBox from '../Helper/SearchBox'
 
-const Hero = () => {
+const Hero2 = () => {
   return (
      <div className='w-full pt-[4vh] md:pt-[12vh] h-screen bg-[#0f0715] overflow-hidden relative bg-[url("/assets/images/hero.jpg")] bg-cover bg-center'>
      {/* <div className="w-full h-screen overflow-hidden relative">
@@ -32,4 +32,4 @@ const Hero = () => {
   )
 }
 
-export default Hero
+export default Hero2
