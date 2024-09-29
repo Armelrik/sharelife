@@ -21,10 +21,7 @@ export default function Navbar() {
             </div>
         </Link>
 
-        {/* SEARCH */}
-        {/* <div className="rounded-full shadow-lg border px-5 py-2"> */}
           <SearchModalCompnent />
-        {/* </div> */}
 
         <UserNav />
 
