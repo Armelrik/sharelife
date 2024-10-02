@@ -30,6 +30,7 @@
     "react-dom": "^18",
     "react-leaflet": "^4.2.1",
     "react-multi-carousel": "^2.8.5",
+    "react-pannellum": "^0.2.16",
     "react-parallax-tilt": "^1.7.239",
     "simple-icons": "^13.10.0",
     "stripe": "^16.12.0",
