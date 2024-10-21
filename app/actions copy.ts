@@ -41,7 +41,7 @@ export async function createMyHome({ userId }: { userId: string }) {
 export async function createCategoryPage(formData: FormData) {
   const categoryName = formData.get("categoryName") as string;
   const homeId = formData.get("homeId") as string;
-  await prisma.home.update({
+  const data = await prisma.home.update({
     where: {
       id: homeId,
     },
@@ -72,7 +72,7 @@ export async function CreateDescription(formData: FormData) {
       contentType: "image/png",
     });
 
-  await prisma.home.update({
+  const data = await prisma.home.update({
     where: {
       id: homeId,
     },
@@ -96,7 +96,7 @@ export async function createLocation(formData: FormData) {
   const countryValue = formData.get("countryValue") as string;
   const townValue = formData.get("town") as string;
   const wardValue = formData.get('ward') as string;
-  await prisma.home.update({
+  const data = await prisma.home.update({
     where: {
       id: homeId,
     },
@@ -116,7 +116,7 @@ export async function addToFavorite(formData: FormData) {
   const userId = formData.get("userId") as string;
   const pathName = formData.get("pathName") as string;
 
-  await prisma.favorite.create({
+  const data = await prisma.favorite.create({
     data: {
       homeId: homeId,
       userId: userId,
@@ -131,7 +131,7 @@ export async function DeleteFromFavorite(formData: FormData) {
   const pathName = formData.get("pathName") as string;
   const userId = formData.get("userId") as string;
 
-  await prisma.favorite.delete({
+  const data = await prisma.favorite.delete({
     where: {
       id: favoriteId,
       userId: userId,
@@ -147,7 +147,7 @@ export async function createReservation(formData: FormData) {
   const startDate = formData.get("startDate") as string;
   const endDate = formData.get("endDate") as string;
 
-  await prisma.reservation.create({
+  const data = await prisma.reservation.create({
     data: {
       userId: userId,
       endDate: endDate,

@@ -3,7 +3,7 @@
 import "react-date-range/dist/styles.css"; // main css file
 import "react-date-range/dist/theme/default.css"; // theme css file
 
-import { DateRange } from "react-date-range";
+import { DateRange, Range, RangeKeyDict } from "react-date-range";
 import { useState } from "react";
 import { eachDayOfInterval } from "date-fns";
 
@@ -32,8 +32,9 @@ export function SelectCalender({
       end: new Date(reservationItem.endDate),
     });
 
-    disabledDates = [...disabledDates, ...dateRange];
+    disabledDates = disabledDates.concat(dateRange);
   });
+
   return (
     <>
       <input
@@ -47,11 +48,10 @@ export function SelectCalender({
         value={state[0].endDate.toISOString()}
       />
       <DateRange
-        date={new Date()}
         showDateDisplay={false}
         rangeColors={["#FF5A5F"]}
         ranges={state}
-        onChange={(item) => setState([item.selection] as any)}
+        onChange={(ranges: RangeKeyDict) => setState([ranges.selection] as any )}
         minDate={new Date()}
         direction="vertical"
         disabledDates={disabledDates}
