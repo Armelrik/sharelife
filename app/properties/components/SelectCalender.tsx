@@ -3,7 +3,7 @@
 import "react-date-range/dist/styles.css"; // main css file
 import "react-date-range/dist/theme/default.css"; // theme css file
 
-import { DateRange, Range, RangeKeyDict } from "react-date-range";
+import { DateRange, RangeKeyDict } from "react-date-range";
 import { useState } from "react";
 import { eachDayOfInterval } from "date-fns";
 
@@ -51,7 +51,9 @@ export function SelectCalender({
         showDateDisplay={false}
         rangeColors={["#FF5A5F"]}
         ranges={state}
+        /* eslint-disable @typescript-eslint/no-explicit-any */
         onChange={(ranges: RangeKeyDict) => setState([ranges.selection] as any )}
+        /* eslint-disable @typescript-eslint/no-explicit-any */
         minDate={new Date()}
         direction="vertical"
         disabledDates={disabledDates}

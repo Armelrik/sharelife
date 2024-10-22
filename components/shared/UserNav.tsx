@@ -2,6 +2,7 @@ import { createMyHome } from '@/app/actions';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger } from '@/components/ui/dropdown-menu'
 import { getKindeServerSession, LoginLink, LogoutLink, RegisterLink } from '@kinde-oss/kinde-auth-nextjs/server'
 import { MenuIcon } from 'lucide-react'
+import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react'
 
@@ -19,7 +20,7 @@ export async function UserNav() {
         <DropdownMenuTrigger>
             <div className="rounded-full border px-2 py-2 lg:px-4 lg:py-2 flex shadow-lg items-center gap-x-3">
                 <MenuIcon className='w-6 h-6 lg:w-5 lg:h-5' />
-                <img src={user?.picture ?? '/assets/icons/logo-grey.svg'} alt='User image' className='rounded-full h-8 w-8 hidden lg:block' />
+                <Image src={user?.picture ?? '/assets/icons/logo-grey.svg'} alt='User image' className='rounded-full h-8 w-8 hidden lg:block' />
             </div>
         </DropdownMenuTrigger>
         <DropdownMenuContent align='end' className='w-[200px]'>

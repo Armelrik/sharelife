@@ -27,7 +27,8 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "components/BHeader.bak",
-    "components/BBanner.bak"
+    "components/BBanner.bak",
+    "app/actions.ts.bak"
   ],
   "exclude": ["node_modules"]
 }

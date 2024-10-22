@@ -64,7 +64,7 @@ export async function Nav({openNav}: Props) {
                 <DropdownMenuTrigger>
                     <div className="rounded-full border px-2 py-2 lg:px-4 lg:py-2 flex shadow-lg items-center gap-x-3">
                         <MenuIcon className='w-6 h-6 lg:w-5 lg:h-5' />
-                        <img src={user?.picture ?? '/assets/icons/logo-grey.svg'} alt='User image' className='rounded-full h-8 w-8 hidden lg:block' />
+                        <Image src={user?.picture ?? '/assets/icons/logo-grey.svg'} alt='User image' className='rounded-full h-8 w-8 hidden lg:block' />
                     </div>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align='end' className='w-[200px]'>
