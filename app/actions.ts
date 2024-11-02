@@ -4,9 +4,7 @@ import { redirect } from 'next/navigation';
 import prisma from '../constant/db';
 import { supabase } from '@/lib/supabase';
 import { revalidatePath } from 'next/cache';
-import { getKindeServerSession } from '@kinde-oss/kinde-auth-nextjs/server';
 import { stripe } from '@/lib/stripe';
-// import Stripe from 'stripe';
 
 
 export async function createMyHome({ userId }: { userId: string }) {

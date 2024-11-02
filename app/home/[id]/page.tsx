@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 
-import { checkout, createReservation } from "@/app/actions";
+import { checkout } from "@/app/actions";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
