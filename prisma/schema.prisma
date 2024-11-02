@@ -65,6 +65,7 @@ model Reservation {
   startDate DateTime
   endDate   DateTime
   createdAt DateTime @default(now())
+  amount    Int
 
   User   User?   @relation(fields: [userId], references: [id])
   userId String?

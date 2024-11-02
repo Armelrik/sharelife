@@ -1,7 +1,7 @@
 import { categoryItemsFr } from "@/constant/categoryItemsFr";
 import Image from "next/image";
 
-export function CaegoryShowcase({ categoryName }: { categoryName: string }) {
+export function CategoryShowcase({ categoryName }: { categoryName: string }) {
   const category = categoryItemsFr.find((item) => item.name === categoryName);
 
   return (

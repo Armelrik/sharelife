@@ -4,6 +4,9 @@ import { redirect } from 'next/navigation';
 import prisma from '../constant/db';
 import { supabase } from '@/lib/supabase';
 import { revalidatePath } from 'next/cache';
+import { getKindeServerSession } from '@kinde-oss/kinde-auth-nextjs/server';
+import { stripe } from '@/lib/stripe';
+// import Stripe from 'stripe';
 
 
 export async function createMyHome({ userId }: { userId: string }) {
@@ -150,6 +153,7 @@ export async function createReservation(formData: FormData) {
   await prisma.reservation.create({
     data: {
       userId: userId,
+      amount: 200,
       endDate: endDate,
       startDate: startDate,
       homeId: homeId,
@@ -157,4 +161,47 @@ export async function createReservation(formData: FormData) {
   });
 
   return redirect("/");
+}
+
+export async function checkout(formData: FormData) {
+
+  const userId = formData.get("userId") as string;
+  const homeId = formData.get("homeId") as string;
+  const userName = formData.get("userName") as string;
+  const startDate = formData.get("startDate") as string;
+  const endDate = formData.get("endDate") as string;
+  const amount = formData.get("price") as string;
+  const desc = formData.get("desc") as string;
+
+  console.log(amount)
+
+  if (stripe) {
+    const session = await stripe.checkout.sessions.create({
+      mode: 'payment',
+      line_items: [
+        {
+          price_data: {
+            currency: 'eur',
+            product_data: {
+              name: 'Reservation de ' + userName,
+              description: ' Vous payez a fin ' + endDate + " Pour la maison: " + desc,
+            },
+            unit_amount: parseInt(amount) * 100
+          },
+          quantity: 1,
+        },
+      ],
+      success_url: "http://localhost:3000/payment/success",
+      cancel_url: "http://localhost:3000/payment/cancel",
+      metadata: {
+        userId: userId,
+        homeId: homeId,
+        startDate: startDate,
+        endDate: endDate,
+
+      }
+    });
+    return redirect(session.url as string);
+  }
+    // return redirect("/");
 }
