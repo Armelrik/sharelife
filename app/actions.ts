@@ -189,8 +189,6 @@ export async function checkout(formData: FormData) {
           quantity: 1,
         },
       ],
-      // success_url: "http://localhost:3000/payment/success",
-      // cancel_url: "http://localhost:3000/payment/cancel",
       success_url:
         process.env.NODE_ENV === "development"
           ? "http://localhost:3000/payment/success"
@@ -209,5 +207,4 @@ export async function checkout(formData: FormData) {
     });
     return redirect(session.url as string);
   }
-    // return redirect("/");
 }

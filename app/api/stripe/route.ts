@@ -15,7 +15,7 @@ export async function POST(req: Request) {
       process.env.STRIPE_SECRET_WEBHOOK as string
     );
   } catch (error: unknown) {
-    return new Response("Webhook Error", { status: 400 });
+    return new Response("This Webhook went into big Error", { status: 400 });
   }
 
   switch (event.type) {
