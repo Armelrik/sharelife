@@ -28,7 +28,8 @@
     ".next/types/**/*.ts",
     "components/BHeader.bak",
     "components/BBanner.bak",
-    "app/actions.ts.bak"
+    "app/actions.ts.bak",
+    "app/api/stripe/route.ts.bak"
   ],
   "exclude": ["node_modules"]
 }
