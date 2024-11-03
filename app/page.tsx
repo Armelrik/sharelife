@@ -17,7 +17,6 @@ const HomePage = () => {
       {/* <ResponsiveNavbar /> */}
       <NavBarShort openNav={openNavHandler} />
       <MobileNavbar showNav={showNavbar} closeNav={closeNavHandler} />
-      {/* <Navbar /> */}
       <Home />
       <Footer />
       <ScrollToTop />
