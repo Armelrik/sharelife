@@ -18,7 +18,7 @@ export default function SuccessRoute() {
             </h3>
             <p className="mt-2 text-sm text-muted-foreground">
               Congrats to your purchase. Your payment was succesfull. We hope
-              you enjoy your product.
+              you enjoy your stay.
             </p>
 
             <Button asChild className="w-full mt-5 sm:mt-6">
