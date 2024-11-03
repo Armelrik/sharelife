@@ -189,8 +189,16 @@ export async function checkout(formData: FormData) {
           quantity: 1,
         },
       ],
-      success_url: "http://localhost:3000/payment/success",
-      cancel_url: "http://localhost:3000/payment/cancel",
+      // success_url: "http://localhost:3000/payment/success",
+      // cancel_url: "http://localhost:3000/payment/cancel",
+      success_url:
+        process.env.NODE_ENV === "development"
+          ? "http://localhost:3000/payment/success"
+          : "https://sharelife-one.vercel.app/payment/success",
+      cancel_url:
+        process.env.NODE_ENV === "development"
+          ? "http://localhost:3000/payment/cancel"
+          : "https://sharelife-one.vercel.app/payment/cancel",
       metadata: {
         userId: userId,
         homeId: homeId,

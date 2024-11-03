@@ -21,6 +21,7 @@ export async function POST(req: Request) {
   switch (event.type) {
     case "checkout.session.completed": {
       const session = event.data.object;
+      console.log(' entering db creation')
 
       await prisma.reservation.create({
         data: {
