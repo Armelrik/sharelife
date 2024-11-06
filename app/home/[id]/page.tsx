@@ -82,7 +82,7 @@ export default async function HomeRoute({
             </h3>
             <div className="flex gap-x-2 text-muted-foreground">
               <p>{data?.guests} Hotes</p> * <p>{data?.bedrooms} Chambres</p> *{" "}
-              {data?.bathrooms} Douches <p> Prix: {data?.price}</p>
+              {data?.bathrooms} Douches <p> Prix: {data?.price} / mois</p>
             </div>
 
             <div className="flex items-center mt-6">
